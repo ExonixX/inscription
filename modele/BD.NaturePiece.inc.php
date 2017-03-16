@@ -6,15 +6,15 @@ require_once 'dao.inc.php';
 class NaturePieceDAO extends DAO{
 
 
-	private $_id = "NTPCid as _id";
-    private $_intitule = "NTPCintitule as _intitule";
+	private $_id = "NTPCID as _id";
+    private $_intitule = "NTPCINTITULE as _intitule";
 
 
 
     function getNaturePiece()
     {
         
-        $req = $this->prepare("SELECT NTPCid,NTPCintitule  FROM NATUREPIECE ");       
+        $req = $this->prepare("SELECT NTPCID,NTPCINTITULE  FROM naturepiece");       
         $req->execute();
         return $this->cursorToObjectArray($req);
     }  
@@ -24,8 +24,8 @@ class NaturePieceDAO extends DAO{
     function insertNaturePiece($intitule){
 
     	$boo=false;
-    	$req=$this->prepare("INSERT INTO NATUREPIECE (NTPCintitule)VALUES(:intitule)");
-    	$req->bindparam(':intitule',$intitule,PDO::PARAM_STR);
+    	$req=$this->prepare("INSERT INTO naturepiece (NTPCINTITULE)VALUES(:intitule)");
+    	$req->bindparam(':intitule',$ajoutpiece,PDO::PARAM_STR);
     	if($req->execute()){
                     $boo=true;
                 }

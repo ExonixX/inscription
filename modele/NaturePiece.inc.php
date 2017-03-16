@@ -19,7 +19,7 @@ class NaturePiece{
 	}
 
 	public function set_NTPCid($_NTPCid){
-		$this->_NTPPCid = $_NTPCid;
+		$this->_NTPCid = $_NTPCid;
 	}
 
 	public function get_NTPCintitule(){

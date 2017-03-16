@@ -9,7 +9,7 @@ $np= new NaturePieceDAO();
 
 if(isset($_POST['ajouter'])){
 
-$intitule=$_POST['intitule'];
+$intitule=$_POST['ajoutpiece'];
 
 if($np->insertNaturePiece($intitule)){
 

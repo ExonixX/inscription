@@ -6,8 +6,8 @@ require_once 'dao.inc.php';
 
 class FormationDAO extends DAO{
 
-	private $_FRMTID ="FRMTid as _FRMTid";
-	private $_FRMTNOM ="FRMTnom as _FRMTnom";
+	private $_FRMTID ="FRMTID as _FRMTid";
+	private $_FRMTNOM ="FRMTNOM as _FRMTnom";
 
 
 

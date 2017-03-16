@@ -19,7 +19,7 @@ $numcompte= $_SESSION['num'];
 			<div class="col-md-6 col-lg-4 col-lg-offset-2">
 				<div class="form-group">
 					<label>Formation :</label>
-					<input type="text" class="form-control" name="formation" id="nomI">
+					<input type="text" class="form-control" name="formation" id="formationI">
 				</div>
 				<button type="submit" class="btn btn-success pull-right" name="suivant" id="suivantI">Suivant -></button>
 			</div>

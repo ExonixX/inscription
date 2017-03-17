@@ -19,22 +19,20 @@ class NaturePieceDAO extends DAO{
         return $this->cursorToObjectArray($req);
     }  
 
-
-
     function insertNaturePiece($intitule){
 
     	$boo=false;
     	$req=$this->prepare("INSERT INTO naturepiece (NTPCINTITULE)VALUES(:intitule)");
-    	$req->bindparam(':intitule',$ajoutpiece,PDO::PARAM_STR);
+    	$req->bindparam(':intitule',$intitule,PDO::PARAM_STR);
     	if($req->execute()){
                     $boo=true;
                 }
                 return $boo;
     }
 
-    function updateNaturePiece($id, $intitule){
+    function updateNaturePiece($intitule){
                 $boo = false;
-        $req= $this->prepare("UPDATE NATUREPIECE set $this->_id = ':id' ,intitule = ':intitule' where NTPCid = ':id'");
+        $req= $this->prepare("UPDATE NATUREPIECE NTPCINTITULE = ':intitule' where NTPCid = ':id'");
         $req->bindParam(":id", $id, PDO::PARAM_INT);
         $req->bindParam(":intitule", $intitule, PDO::PARAM_STR);
                 if($this->execute($req)){
@@ -43,7 +41,7 @@ class NaturePieceDAO extends DAO{
                 return $boo;
             }
 
-function deleteNaturePiece($id){
+function deleteNaturePiece($intitule){
                 $boo = false;
 		$req = $this->prepare("DELETE FROM NATUREPIECE WHERE $this->_id = :id");
 		$req->bindParam(":id", $id, PDO::PARAM_INT);

@@ -3,8 +3,8 @@
 class NaturePiece{
 
 
-	private $_NTPCid;
-	private $_NTPCintitule;
+	private $_NTPCID;
+	private $_NTPCINTITULE;
 
 
 
@@ -14,20 +14,20 @@ class NaturePiece{
 }
 
 
-	public function get_NTPCid(){
-		return $this->_NTPCid;
+	public function get_NTPCID(){
+		return $this->_NTPCID;
 	}
 
-	public function set_NTPCid($_NTPCid){
-		$this->_NTPCid = $_NTPCid;
+	public function set_NTPCID($_NTPCID){
+		$this->_NTPCID = $_NTPCID;
 	}
 
-	public function get_NTPCintitule(){
-		return $this->_NTPCintitule;
+	public function get_NTPCINTITULE(){
+		return $this->_NTPCINTITULE;
 	}
 
-	public function set_NTPCintitule($_NTPCintitule){
-		$this->_NTPCintitule=$_NTPCintitule;
+	public function set_NTPCINTITULE($_NTPCINTITULE){
+		$this->_NTPCINTITULE=$_NTPCINTITULE;
 	}
 
 

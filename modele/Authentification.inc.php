@@ -18,11 +18,11 @@ class Authentification{
 		$res = $utilisateurD->getCompteByID($log);
                 $tcDAO = new TypeCompteDAO();
                
-                if($res->get_mdp() == $pass){
-                $tc= $tcDAO->GetLibelleTypeCompteByCode($res->getTypeCompte());
-                $_SESSION['login']=$res->get_login();
-                $_SESSION['num']=$res->get_num();
-                $_SESSION['grade']=$tc->get_LibelleType() ;
+                if($res->get_CMPTPASSWORD() == $pass){
+                $tc= $tcDAO->GetLibelleTypeCompteByCode($res->get_TCMPNUM());
+                $_SESSION['login']=$res->get_CMPTLOGIN();
+                $_SESSION['num']=$res->get_CMPTNUM();
+                $_SESSION['grade']=$tc->get_TCMPLIBELLE() ;
              
 
                 return true;

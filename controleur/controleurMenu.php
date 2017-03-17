@@ -1,7 +1,6 @@
 <?php
 
 
-$jimmy
 
 require_once ('modele/Menu.inc.php');
 /* 
@@ -13,6 +12,7 @@ require_once ('modele/Menu.inc.php');
 $men = new Menu();
 $men->setName("menu");
 $men->ajouterLien("Accueil", "Accueil");
+$men->ajouterLien('Formation',"Formation");
 
 
 
@@ -20,10 +20,11 @@ if(isset($_SESSION['login'])){
 
 
 
-if($_SESSION['grade']=="Secretaire"){
+if($_SESSION['grade']=="Agent"){
   $men->ajouterLien('Liste des Dossier',"AjoutDossier");
   $men->ajouterLien('Nature Des Pieces',"NaturePiece");
   $men->ajouterLien('Modifier Une Piece',"ModifNaturePiece");
+
 }
 if($_SESSION['grade']=="Etudiant"){
 

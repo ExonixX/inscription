@@ -4,10 +4,10 @@ require_once 'modele/dao.inc.php';
 require_once 'config/param.php';
 
 class CompteDAO extends DAO{
-    private $_num = "numCompte as _num";
-    private $_login = "loginCompte as _login";
-    private $_mdp = "mdpCompte as _mdp";
-    private $_TypeCompte = "codeTypeCompte as _TypeCompte";
+    private $_CMPTNUM = "CMPTNUM as _CMPTNUM";
+    private $_CMPTLOGIN = "CMPTLOGIN as _CMPTLOGIN";
+    private $_CMPTPASSWORD = "CMPTPASSWORD as _CMPTPASSWORD";
+    private $_TCMPNUM = "TCMPNUM as _TCMPNUM";
 
     
     
@@ -18,7 +18,7 @@ class CompteDAO extends DAO{
      */
     function getCompteByID($id)
     {
-        $req = $this->prepare("SELECT $this->_num,$this->_login, $this->_mdp, $this->_TypeCompte from COMPTE where loginCompte = :id");
+        $req = $this->prepare("SELECT $this->_CMPTNUM,$this->_CMPTLOGIN,$this->_CMPTPASSWORD,$this->_TCMPNUM from COMPTE where CMPTLOGIN = :id");
         $req->bindParam(':id', $id, PDO::PARAM_STR);
         $req->execute();
         
@@ -28,34 +28,7 @@ class CompteDAO extends DAO{
 
 
 
-function insertCompte($login,$mdp){
-
-
-
-	$boo=false;
-	$req=$this->prepare("INSERT INTO COMPTE (loginCompte,mdpCompte,CodeTypeCompte)VALUES(:login,:mdp,'1')");
-	$req->bindparam(':login', $login, PDO::PARAM_STR);
-	$req->bindparam(':mdp', $mdp, PDO::PARAM_STR);
-	if($req->execute()){
-                    $boo=true;
-                }
-                return $boo;
-
 }
-
-function updateCompte($id,$login,$mdp){
-    $req=$this->prepare("UPDATE compte set $this->_login=':login',$this->_mdp=':mdp'where numCompte=':num'");
-    $req->bindParam(":num",$id,PDO::PARAM_STR);
-    $req->bindParam(":login",$login,PDO::PARAM_STR);
-    $req->binParam(":mdp",$mdp,PDO::PARAM_STR);
-    if($this->execute($req)){
-        $boo=true;
-    }
-    return $boo;
-}
-}
-
-
 
 
 

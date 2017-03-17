@@ -16,7 +16,7 @@ class FormationDAO extends DAO{
 
 
 		$boo=false;
-		$req=$this->prepare("INSERT INTO formation (FRMTNOM) VALUES (:nom)");
+		$req=$this->prepare("INSERT INTO formation (FRMTID,FRMTNOM) VALUES ('1',:nom)");
 		$req->bindparam(':nom', $nom ,PDO::PARAM_STR);
 		if($req->execute()){
                     $boo=true;

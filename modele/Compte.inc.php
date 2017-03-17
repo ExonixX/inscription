@@ -1,49 +1,48 @@
 <?php
 class Compte{
 
-private $_numCompte;
-private $_loginCompte;
-private $_mdpCompte;
-private $_codeTypeCompte;
+private $_CMPTNUM;
+private $_CMPTLOGIN;
+private $_CMPTPASSWORD;
+private $_TCMPNUM;
 
 function __construct() {
     
 
 }
 
-public function get_num(){
-		return $this->_num;
+
+public function get_CMPTNUM(){
+		return $this->_CMPTNUM;
 	}
 
-	public function set_num($_num){
-		$this->_num = $_num;
+	public function set_CMPTNUM($_CMPTNUM){
+		$this->_CMPTNUM = $_CMPTNUM;
 	}
 
-	public function get_login(){
-		return $this->_login;
+	public function get_CMPTLOGIN(){
+		return $this->_CMPTLOGIN;
 	}
 
-	public function set_login($_login){
-		$this->_login = $_login;
+	public function set_CMPTLOGIN($_CMPTLOGIN){
+		$this->_CMPTLOGIN = $_CMPTLOGIN;
 	}
 
-	public function get_mdp(){
-		return $this->_mdp;
+	public function get_CMPTPASSWORD(){
+		return $this->_CMPTPASSWORD;
 	}
 
-	public function set_mdp($_mdp){
-		$this->_mdp = $_mdp;
+	public function set_CMPTPASSWORD($_CMPTPASSWORD){
+		$this->_CMPTPASSWORD = $_CMPTPASSWORD;
 	}
 
-	public function getTypeCompte(){
-		return $this->_TypeCompte;
+	public function get_TCMPNUM(){
+		return $this->_TCMPNUM;
 	}
 
-	public function setTypeCompte($TypeCompte){
-		$this->_TypeCompte = $TypeCompte;
+	public function set_TCMPNUM($_TCMPNUM){
+		$this->_TCMPNUM = $_TCMPNUM;
 	}
-
-
 
 
 

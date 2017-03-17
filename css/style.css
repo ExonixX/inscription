@@ -57,37 +57,6 @@
 #menu .dropdown:hover .dropdown-content {
     display: block;
 }
-#simulateur #formulaire {
-padding-left: 34%;
-font-size: 20px;
-padding-top: 3%;
-
-
-}
-
-#simulateur #formulaire{
-    background-color: red;
-}
-
-
-#simulateur #formulaire input{
-
-font-size: 12px;
-
-margin-top: 2%;
-
-}
-
-#simulateur #formulaire .ico_voiture{
-    display: inline-block;
-    border: 1px solid black;
-    height: 20%;
-    background-color: white;
-    
-}
-#simulateur img{
-    width: 100%;
-}
 
 #connexion{
    

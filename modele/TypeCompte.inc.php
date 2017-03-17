@@ -1,15 +1,16 @@
 <?php
 class TypeCompte{
-    private $_codeType;
-    private $_libelleType;
+    
+    private $_TCMPNUM;
+    private $_TCMPLIBELLE;
     
     function __construct() {
         
     }
-    public function get_CodeType(){
-        return $this->_codeType;
+    public function get_TCMPNUM(){
+        return $this->_TCMPNUM;
     }
-    public function get_LibelleType(){
-        return $this->_libelleType;
+    public function get_TCMPLIBELLE(){
+        return $this->_TCMPLIBELLE;
     }
 }

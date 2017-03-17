@@ -7,7 +7,7 @@
 
 <form action="#" method="POST" id="form">
 				<div class="form-group">
-	<span>Login : </span><input type="mail" name="mail" id="mailI" ><br>
+	<span>Login : </span><input type="mail" name="mail" id="loginI" ><br>
         <span>Mot de passe : </span><input type="password" name="mdp" id="mdpI" ><br>
 	<input type="submit" name="valider_conn" id="valider_connI">
 

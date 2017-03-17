@@ -1,7 +1,6 @@
 <?php
 
-echo 'Vous etes le compte n°'.$_SESSION['num'];
-$numcompte= $_SESSION['num'];
+
 ?>
 
 <header>

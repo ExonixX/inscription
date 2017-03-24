@@ -1,0 +1,5 @@
+Ajoute en premier MLR1.SQL et ensuite utilise les Insert de inscription_ligne car si tu import inscription_ligne normalement il y a pas les relations :s 
+
+	
+
+					GOOD LUCK JIMMY ;)

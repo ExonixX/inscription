@@ -6,15 +6,15 @@ require_once 'dao.inc.php';
 class NaturePieceDAO extends DAO{
 
 
-	private $_id = "NTPCid as _id";
-    private $_intitule = "NTPCintitule as _intitule";
+	private $_id = "NTPCID as _id";
+    private $_intitule = "NTPCINTITULE as _intitule";
 
 
 
     function getNaturePiece()
     {
         
-        $req = $this->prepare("SELECT NTPCid,NTPCintitule  FROM NATUREPIECE ");       
+        $req = $this->prepare("SELECT NTPCid,NTPCintitule  FROM NATURE_PIECE ");       
         $req->execute();
         return $this->cursorToObjectArray($req);
     }  
@@ -24,7 +24,7 @@ class NaturePieceDAO extends DAO{
     function insertNaturePiece($intitule){
 
     	$boo=false;
-    	$req=$this->prepare("INSERT INTO NATUREPIECE (NTPCintitule)VALUES(:intitule)");
+    	$req=$this->prepare("INSERT INTO NATURE_PIECE (NTPCINTITULE)VALUES(:intitule)");
     	$req->bindparam(':intitule',$intitule,PDO::PARAM_STR);
     	if($req->execute()){
                     $boo=true;
@@ -34,7 +34,7 @@ class NaturePieceDAO extends DAO{
 
     function updateNaturePiece($id, $intitule){
                 $boo = false;
-        $req= $this->prepare("UPDATE NATUREPIECE set $this->_id = ':id' ,intitule = ':intitule' where NTPCid = ':id'");
+        $req= $this->prepare("UPDATE NATURE_PIECE set $this->_id = ':id' ,intitule = ':intitule' where NTPCid = ':id'");
         $req->bindParam(":id", $id, PDO::PARAM_INT);
         $req->bindParam(":intitule", $intitule, PDO::PARAM_STR);
                 if($this->execute($req)){
@@ -44,13 +44,15 @@ class NaturePieceDAO extends DAO{
             }
 
 function deleteNaturePiece($id){
-                $boo = false;
-		$req = $this->prepare("DELETE FROM NATUREPIECE WHERE $this->_id = :id");
-		$req->bindParam(":id", $id, PDO::PARAM_INT);
-		if($this->execute($req)){
-                    $boo = true;
-                }
-                return $boo;
-	}
+        $boo=false;
+        $req=$this->prepare("DELETE FROM NATURE_PIECE WHERE NTPCID= :id ");
+        $req->bindParam(':id',$id,PDO::PARAM_INT);
+        if($req->execute()){
+
+            $boo=true;
+        }
+        return $boo;
+    }
+	
 
 }

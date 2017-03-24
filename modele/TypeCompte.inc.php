@@ -7,10 +7,15 @@ class TypeCompte{
     function __construct() {
         
     }
+
+
     public function get_TCMPNUM(){
         return $this->_TCMPNUM;
     }
+
     public function get_TCMPLIBELLE(){
         return $this->_TCMPLIBELLE;
     }
+
+    
 }

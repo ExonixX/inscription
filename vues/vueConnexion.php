@@ -5,11 +5,15 @@
 <img class="img_connexion " src="img/connexion/compte.jpg">
 
 
+<div class="container">
+<div class="row">
 <form action="#" method="POST" id="form">
-				<div class="form-group">
-	<span>Login : </span><input type="mail" name="mail" id="loginI" ><br>
-        <span>Mot de passe : </span><input type="password" name="mdp" id="mdpI" ><br>
-	<input type="submit" name="valider_conn" id="valider_connI">
+<div class="form-group">
+<label>Login: </label>
+	<input type="mail" name="mail" id="loginI" placeholder="jdupond" >
+	<label> Password:</label>
+	<input type="password" name="mdp" id="mdpI" >
+   <input class="btn btn-success" type="submit" name="valider_conn" id="valider_connI">
 
 </form>
 

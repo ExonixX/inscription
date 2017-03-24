@@ -6,6 +6,8 @@ require_once('modele/BD.Compte.inc.php');
 require_once('modele/BD.TypeCompte.inc.php');
 
 
+// TOUT CE QUI CONCERNE LA CONNEXION ET LA VARIABLE SESSION
+
 class Authentification{
         public function Login($log,$pass){
 	
@@ -17,12 +19,14 @@ class Authentification{
 		$utilisateurD = new CompteDAO();
 		$res = $utilisateurD->getCompteByID($log);
                 $tcDAO = new TypeCompteDAO();
+              
                
                 if($res->get_CMPTPASSWORD() == $pass){
                 $tc= $tcDAO->GetLibelleTypeCompteByCode($res->get_TCMPNUM());
                 $_SESSION['login']=$res->get_CMPTLOGIN();
                 $_SESSION['num']=$res->get_CMPTNUM();
                 $_SESSION['grade']=$tc->get_TCMPLIBELLE() ;
+          
              
 
                 return true;

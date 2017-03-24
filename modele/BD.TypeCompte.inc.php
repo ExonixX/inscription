@@ -4,7 +4,7 @@ require_once 'dao.inc.php';
 
 class TypeCompteDAO extends DAO{
     private $_TCMPNUM = "TCMPNUM as _TCMPNUM";
-    private $_TCMPLIBELLE = "TCMPLIBELLE as _TCMPLIBELE";
+    private $_TCMPLIBELLE = "TCMPLIBELLE as _TCMPLIBELLE";
    
     public function GetLibelleTypeCompteByCode($code){
        
@@ -13,6 +13,8 @@ class TypeCompteDAO extends DAO{
         $req->execute();
         return $this->cursorToObject($req);
     }
+
+    
     
     
 }

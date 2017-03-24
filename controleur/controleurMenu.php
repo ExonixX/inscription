@@ -12,7 +12,7 @@ require_once ('modele/Menu.inc.php');
 $men = new Menu();
 $men->setName("menu");
 $men->ajouterLien("Accueil", "Accueil");
-$men->ajouterLien('Formation',"Formation");
+
 
 
 
@@ -21,15 +21,16 @@ if(isset($_SESSION['login'])){
 
 
 if($_SESSION['grade']=="Agent"){
-  $men->ajouterLien('Liste des Dossier',"AjoutDossier");
+  $men->ajouterLien('Liste des Dossier',"AjoutDossier"); // ( ' Nom de l'onglet ' ,' Nom du controleur' )
   $men->ajouterLien('Nature Des Pieces',"NaturePiece");
-  $men->ajouterLien('Modifier Une Piece',"ModifNaturePiece");
+  $men->ajouterLien('Formation',"Formation");
 
 }
 if($_SESSION['grade']=="Etudiant"){
 
 }
 $men->ajouterLien('Inscription', "Inscription");
+$men->ajouterLien('Dépôt De Fichier',"Depot");
 $men->ajouterLien('Modification Profil', "ModifProfil");
 $men->ajouterLien('Deconnexion ('.$_SESSION["login"].')', "Deconnexion");
 }else{

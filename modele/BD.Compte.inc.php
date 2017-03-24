@@ -1,4 +1,5 @@
 <?php
+
 require_once 'modele/Compte.inc.php';
 require_once 'modele/dao.inc.php';
 require_once 'config/param.php';

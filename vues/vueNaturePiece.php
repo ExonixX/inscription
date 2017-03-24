@@ -12,6 +12,7 @@
 				<label>Liste des Types de piéce</label>
 				<select name="NTPCID">
 						<?php
+						// A REFAIRE AU Propre
 						mysql_connect("127.0.0.1", "root", "");
 						mysql_select_db("inscription_ligne");
 						mysql_query("SET NAMES 'utf8'");
@@ -26,7 +27,7 @@
   					 }
   					 ?>
 				</select>
-				<button type="submit" class="btn btn-success pull-right-md" name="supprimer" id="supprimerI">Supprimer</button><br>
+				<button type="submit" class="btn btn-success pull-right-md" name="supprimer" id="supprimerI">Supprimer</button><br>	²
 				</div>
 <div class="form-group">
 					<label>Ajouter Un Type de piéce :</label>

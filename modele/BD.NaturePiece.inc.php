@@ -43,6 +43,8 @@ class NaturePieceDAO extends DAO{
                 return $boo;
             }
 
+// REQUETE DELETE
+
 function deleteNaturePiece($id){
         $boo=false;
         $req=$this->prepare("DELETE FROM NATURE_PIECE WHERE NTPCID= :id ");

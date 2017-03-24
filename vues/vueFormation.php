@@ -20,6 +20,7 @@
 				<label>Liste des Formations</label>
 				<select name="FRMTID">
 						<?php
+						// A REFAIRE AU PROPRE
 						mysql_connect("127.0.0.1", "root", "");
 						mysql_select_db("inscription_ligne");
 						mysql_query("SET NAMES 'utf8'");

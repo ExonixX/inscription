@@ -13,16 +13,16 @@ if(isset($_SESSION['login'])){
 
   if($_SESSION['grade']=="Agent"){
     //$men->ajouterLien('Liste des Dossiers',"AjoutDossier"); // ( ' Nom de l'onglet ' ,' Nom du controleur' )
-    $men->ajouterLien('Nature Des Pieces',"NaturePiece");
+    $men->ajouterLien('Pièces justificatives',"NaturePiece");
     $men->ajouterLien('Formation',"Formation");
-    $men->ajouterLien('Deconnexion ('.$_SESSION["login"].')', "Deconnexion");
+    $men->ajouterLien('Déconnexion ('.$_SESSION["login"].')', "Deconnexion");
   }
 
   if($_SESSION['grade']=="Etudiant"){
     $men->ajouterLien('Inscription', "Inscription");
     $men->ajouterLien('Dépôt De Fichier',"Depot");
     $men->ajouterLien('Modification Profil', "ModifProfil");
-    $men->ajouterLien('Deconnexion ('.$_SESSION["login"].')', "Deconnexion");
+    $men->ajouterLien('Déconnexion ('.$_SESSION["login"].')', "Deconnexion");
   }
 
 }

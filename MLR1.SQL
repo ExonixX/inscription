@@ -9,9 +9,9 @@ USE inscription_ligne;
 CREATE TABLE IF NOT EXISTS NATURE_PIECE
  (
    NTPCID SMALLINT(2) NOT NULL AUTO_INCREMENT,
-   NTPCINTITULE CHAR(128) NULL  
+   NTPCINTITULE CHAR(64) NULL  
    , PRIMARY KEY (NTPCID) 
- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # -----------------------------------------------------------------------------
 #       TABLE : ETUDIANT
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS ETUDIANT
    EDNTCPADRESSETU CHAR(5) NULL  ,
    EDNTVILLEADRESSETU CHAR(32) NULL  
    , PRIMARY KEY (EDNTID) 
- )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 # -----------------------------------------------------------------------------
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS RESPONSABLE
    RPSLNBENFSCOLARISES INTEGER(1) NULL  ,
    RPSLNBTOTENFANTS INTEGER(2) NULL  
    , PRIMARY KEY (RPSLID) 
- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # -----------------------------------------------------------------------------
 #       INDEX DE LA TABLE RESPONSABLE
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS TYPECOMPTE
    TCMPNUM INTEGER(11) NOT NULL AUTO_INCREMENT ,
    TCMPLIBELLE CHAR(32) NULL  
    , PRIMARY KEY (TCMPNUM) 
- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # -----------------------------------------------------------------------------
 #       TABLE : FORMATION
@@ -106,9 +106,9 @@ CREATE TABLE IF NOT EXISTS TYPECOMPTE
 CREATE TABLE IF NOT EXISTS FORMATION
  (
    FRMTID SMALLINT(2) NOT NULL AUTO_INCREMENT ,
-   FRMTNOM CHAR(128) NULL  
+   FRMTNOM CHAR(255) NULL  
    , PRIMARY KEY (FRMTID) 
- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # -----------------------------------------------------------------------------
 #       TABLE : PROFESSION
@@ -118,9 +118,9 @@ CREATE TABLE IF NOT EXISTS PROFESSION
  (
    PFSNID INTEGER(11) NOT NULL AUTO_INCREMENT ,
    CATGID INTEGER(11) NOT NULL  ,
-   PFSNLIBELLE CHAR(32) NULL  
+   PFSNLIBELLE CHAR(255) NULL  
    , PRIMARY KEY (PFSNID) 
- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # -----------------------------------------------------------------------------
 #       INDEX DE LA TABLE PROFESSION
@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS AGENT
    AGNTNOM CHAR(32) NULL  ,
    AGNTPRENOM CHAR(32) NULL  
    , PRIMARY KEY (AGNTID) 
- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # -----------------------------------------------------------------------------
 #       INDEX DE LA TABLE AGENT
@@ -160,7 +160,7 @@ CREATE TABLE IF NOT EXISTS SITUATION_EMPLOI
    STEPID INTEGER(11) NOT NULL AUTO_INCREMENT ,
    STEPLIBELLE CHAR(32) NULL  
    , PRIMARY KEY (STEPID) 
- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # -----------------------------------------------------------------------------
 #       TABLE : CATEGORIE
@@ -171,7 +171,7 @@ CREATE TABLE IF NOT EXISTS CATEGORIE
    CATGID INTEGER(11) NOT NULL AUTO_INCREMENT ,
    CATGLIBELLE CHAR(32) NULL  
    , PRIMARY KEY (CATGID) 
- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # -----------------------------------------------------------------------------
 #       TABLE : PIECE_DEPOSE
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS PIECE_DEPOSE
    PIDENOMFICHIER CHAR(32) NULL  ,
    PIDEVALIDEE BOOL NULL  
    , PRIMARY KEY (PIDEID) 
- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # -----------------------------------------------------------------------------
 #       TABLE : COMPTE
@@ -196,7 +196,7 @@ CREATE TABLE IF NOT EXISTS COMPTE
    CMPTLOGIN CHAR(32) NULL  ,
    CMPTPASSWORD CHAR(32) NULL  
    , PRIMARY KEY (CMPTNUM) 
- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # -----------------------------------------------------------------------------
 #       INDEX DE LA TABLE COMPTE
@@ -216,7 +216,7 @@ CREATE TABLE IF NOT EXISTS COMPOSER
    NTPCID SMALLINT(2) NOT NULL  ,
    CMPRNUMRANG SMALLINT(2) NULL  
    , PRIMARY KEY (FRMTID,NTPCID) 
- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # -----------------------------------------------------------------------------
 #       INDEX DE LA TABLE COMPOSER
@@ -238,7 +238,7 @@ CREATE TABLE IF NOT EXISTS APPARTENIR
    RPSLID SMALLINT(5) NOT NULL AUTO_INCREMENT ,
    EDNTID SMALLINT(4) NOT NULL  
    , PRIMARY KEY (RPSLID,EDNTID) 
- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # -----------------------------------------------------------------------------
 #       INDEX DE LA TABLE APPARTENIR
@@ -261,7 +261,7 @@ CREATE TABLE IF NOT EXISTS DEPOSER
    PIDEID INTEGER(11) NOT NULL  ,
    DPSRDATEDEPOT DATE NULL  
    , PRIMARY KEY (EDNTID,PIDEID) 
- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # -----------------------------------------------------------------------------
 #       INDEX DE LA TABLE DEPOSER
@@ -284,7 +284,7 @@ CREATE TABLE IF NOT EXISTS VERIFIER
    AGNTID SMALLINT(11) NOT NULL  ,
    VRFEDATECONTROLE DATE NULL  
    , PRIMARY KEY (PIDEID,AGNTID) 
- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # -----------------------------------------------------------------------------
 #       INDEX DE LA TABLE VERIFIER

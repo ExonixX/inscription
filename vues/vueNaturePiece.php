@@ -4,12 +4,13 @@
 
 </header>
 <div class="container">
-<h3> Ajouter une Piéce :</h3>
+<h3>Liste des documents demandés :</h3>
 <div class="row">
 <form action="#" method="POST" id="form">
 <div class="col-md-6 col-lg-4 col-lg-offset-2">
 	<div class="form-group">
-				<label>Liste des Types de piéce</label>
+				<h3>Supprimer une pièce :</h3>
+				<label>Veuillez sélectionner un élément de la liste : </label>
 				<select name="NTPCID">
 						<?php
 						// A REFAIRE AU Propre
@@ -27,11 +28,12 @@
   					 }
   					 ?>
 				</select>
-				<button type="submit" class="btn btn-success pull-right-md" name="supprimer" id="supprimerI">Supprimer</button><br>	²
+				<button type="submit" class="btn btn-success pull-right-md" name="supprimer" id="supprimerI">Supprimer</button><br>
 				</div>
 <div class="form-group">
-					<label>Ajouter Un Type de piéce :</label>
-					<input type="text" class="form-control" name="intitule" id="intituleI" placeholder="Carte D'identié...">
+					<h3>Ajouter une nouvelle pièce :</h3>
+				<label>Veuillez saisir le nouveau document souhaité : </label>
+					<input type="text" class="form-control" name="intitule" id="intituleI" placeholder="Ex : carte d'identité...">
 				</div>
 				
 				<button type="submit" class="btn btn-success pull-right-md " name="ajouter" id="suivantI">Ajouter</button>

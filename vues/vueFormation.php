@@ -17,7 +17,7 @@
 	<form action="#" method="POST" id="form">
 			<div class="col-md-6 col-lg-4 col-lg-offset-2">
 				<div class="form-group">
-				<label>Liste des Formations</label>
+				<label>Liste des Formations :</label>
 				<select name="FRMTID">
 						<?php
 						// A REFAIRE AU PROPRE

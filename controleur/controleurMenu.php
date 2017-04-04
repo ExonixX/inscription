@@ -12,7 +12,7 @@ $men->ajouterLien("Accueil", "Accueil");
 if(isset($_SESSION['login'])){
 
   if($_SESSION['grade']=="Agent"){
-    //$men->ajouterLien('Liste des Dossiers',"AjoutDossier"); // ( ' Nom de l'onglet ' ,' Nom du controleur' )
+    $men->ajouterLien('Fichiers déposés',"AjoutDossier"); // ( ' Nom de l'onglet ' ,' Nom du controleur' )
     $men->ajouterLien('Pièces justificatives',"NaturePiece");
     $men->ajouterLien('Formation',"Formation");
     $men->ajouterLien('Déconnexion ('.$_SESSION["login"].')', "Deconnexion");

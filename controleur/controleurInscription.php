@@ -37,10 +37,12 @@ if(!is_null($etu->insertEtudiant($nom,$prenom,$ine,$sexe,$datenaiss,$lieunaiss,$
 header('Location: index.php?m=Responsable');
 
 
+//creation dossier etudiant en fonction de sa formation
+
 
 }else{
     
-    echo 'Erreur';
+    echo 'Erreur lors de l ajout';
     
 
 }

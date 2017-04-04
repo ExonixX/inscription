@@ -20,7 +20,7 @@ header('Location: index.php');
 
 //emplacement du répertoire souhaité
 //utf8 pour garder la casse
-$dossier = "upload/ ".utf8_decode($nom);
+$dossier = "upload/".utf8_decode($nom);
 
 //revoir la condition
 //si dossier existe, alors on affiche un message

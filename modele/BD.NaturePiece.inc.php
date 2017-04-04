@@ -43,18 +43,18 @@ class NaturePieceDAO extends DAO{
                 return $boo;
             }
 
-// REQUETE DELETE
+    // REQUETE DELETE
 
-function deleteNaturePiece($id){
-        $boo=false;
-        $req=$this->prepare("DELETE FROM NATURE_PIECE WHERE NTPCID= :id ");
-        $req->bindParam(':id',$id,PDO::PARAM_INT);
-        if($req->execute()){
+    function deleteNaturePiece($id){
+            $boo=false;
+            $req=$this->prepare("DELETE FROM NATURE_PIECE WHERE NTPCID= :id ");
+            $req->bindParam(':id',$id,PDO::PARAM_INT);
+            if($req->execute()){
 
-            $boo=true;
+                $boo=true;
+            }
+            return $boo;
         }
-        return $boo;
-    }
 	
 
 }

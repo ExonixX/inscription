@@ -28,16 +28,30 @@ class EtudiantDAO extends DAO{
 
 	public function GetEtudiantByCode($code){
        
-        $req = $this->prepare("SELECT EDNTID, EDNTNOMETU, EDNTPRENOMETU,EDNTINEBEA,EDNTSEXE,EDNTDATENAISS,EDNTLIEUNAISS,EDNTCPNAISS,EDNTPAYSNAISS,EDNTTEL,EDNTMAIL,EDNTBOURSIER,EDNTCYCLE,EDNTADRESSETU,EDNTCPADRESSETU,EDNTVILLEADRESSETU,CMPTNUM,FRMTID from  ETUDIANT where EDNTID = :code");
+        $req = $this->prepare("SELECT EDNTID, EDNTNOMETU, EDNTPRENOMETU,EDNTINEBEA,EDNTSEXE,EDNTDATENAISS,EDNTLIEUNAISS,EDNTCPNAISS,EDNTPAYSNAISS,EDNTTEL,EDNTMAIL,EDNTBOURSIER,EDNTCYCLE,EDNTADRESSETU,EDNTCPADRESSETU,EDNTVILLEADRESSETU,CMPTNUM,FRMTID from ETUDIANT where EDNTID = :code");
         $req->bindParam(':code', $code);
         $req->execute();
         return $this->cursorToObject($req);
     }
 
+//----------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
+
+    public function GetFormationEtudiantByCode($codefrmt){
+       
+        $req = $this->prepare("SELECT FRMTNOM from FORMATION where FRMTID = :code");
+        $req->bindParam(':code', $codefrmt);
+        $req->execute();
+        return $this->cursorToObject($req);
+    }
+
+//----------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 
-
-	 function insertEtudiant($nom,$prenom,$ine,$sexe,$datenaiss,$lieunaiss,$cpnaiss,$paysnaiss,$tel,$mail,$boursier,$cycle,$adressetu,$cpadressetu,$villeadressetu,$cmptnum,$frmtid){
+	public function insertEtudiant($nom,$prenom,$ine,$sexe,$datenaiss,$lieunaiss,$cpnaiss,$paysnaiss,$tel,$mail,$boursier,$cycle,$adressetu,$cpadressetu,$villeadressetu,$cmptnum,$frmtid){
 
 
 		$boo=false;

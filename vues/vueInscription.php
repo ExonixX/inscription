@@ -23,53 +23,53 @@ $numcompte= $_SESSION['num'];
 			<div class="col-md-6 col-lg-4 col-lg-offset-2">
 				<div class="form-group">
 					<label>Nom :</label>
-					<input type="text" class="form-control" name="nom" id="nomI" placeholder="Ex: Dupond">
+					<input type="text" class="form-control" name="nom" id="nomI" placeholder="Ex: Dupond" required>
 				</div>
 				<label>Sexe :</label>
 					<div class="radio">
-  						<label><input type="radio" name="sexe" value="Fille">Fille</label>
-  						<label><input type="radio" name="sexe" value="Homme">Garçon</label>
+  						<label><input type="radio" name="sexe" value="Fille" required>Fille</label>
+  						<label><input type="radio" name="sexe" value="Homme" required>Garçon</label>
 					</div>
 				<div class="form-group">
 					<label>N°INE/BEA :</label>
-					<input type="text" class="form-control" name="ine" id="ineI" placeholder="Ex: HLKBNCHRF5">
+					<input type="text" class="form-control" name="ine" id="ineI" maxlength="11" placeholder="Ex: HLKBNCHRF5" required>
 				</div>
 					
 				<div class="form-group">
 					<label>Date de naissance :</label>
-					<input type="date" class="form-control" name="datenaiss" id="datenaissI">
+					<input type="date" class="form-control" name="datenaiss" id="datenaissI" maxlength="10" placeholder="Ex : 10/01/1992" required>
 				</div>
 				<div class="form-group">
 					<label>Lieu De Naissance :</label>
-					<input type="text" class="form-control" name="lieunaiss" id="lieunaissI" placeholder="Ex: Bordeaux">
+					<input type="text" class="form-control" name="lieunaiss" id="lieunaissI" placeholder="Ex: Bordeaux" required>
 				</div>
 				<div class="form-group">
 					<label>Code postal de naissance :</label>
-					<input type="text" class="form-control" name="cpnaiss" id="cpnaissI" placeholder="Ex: 33000">
+					<input type="text" class="form-control" name="cpnaiss" id="cpnaissI" maxlength="5" placeholder="Ex: 33000" required>
 				</div>
 				<div class="form-group">
 					<label>Pays De Naissance :</label>
-					<input type="text" class="form-control" name="paysnaiss" id="paysnaissI" placeholder="Ex: France">
+					<input type="text" class="form-control" name="paysnaiss" id="paysnaissI" placeholder="Ex: France" required>
 				</div>
 				<div class="form-group">
 					<label>Boursier :</label>
 						<div class="radio">
-	  						<label><input type="radio" name="boursier" value="Oui">Oui</label>
-	  						<label><input type="radio" name="boursier" value="Non">Non</label>
+	  						<label><input type="radio" name="boursier" value="Oui" required>Oui</label>
+	  						<label><input type="radio" name="boursier" value="Non" required>Non</label>
 						</div>
 				</div>
 	<h3>Veuillez saisir votre adresse :</h3>
 				<div class="form-group">
 					<label>Adresse :</label>
-					<input type="text" class="form-control" name="adressetu" id="adressetuI" placeholder="Ex: 18 Route de Jean Moulin">
+					<input type="text" class="form-control" name="adressetu" id="adressetuI" placeholder="Ex: 18 Route de Jean Moulin" required>
 				</div>
 				<div class="form-group">
 					<label>Code postal :</label>
-					<input type="text" class="form-control" name="cpadressetu" id="CPadressetuI" placeholder="Ex: 33000">
+					<input type="text" class="form-control" name="cpadressetu" id="CPadressetuI" maxlength="5" placeholder="Ex: 33000" required>
 				</div>
 				<div class="form-group">
 					<label>Ville :</label>
-					<input type="text" class="form-control" name="villeadressetu" id="villeadressetuI" placeholder="Ex: Bordeaux">
+					<input type="text" class="form-control" name="villeadressetu" id="villeadressetuI" placeholder="Ex: Bordeaux" required>
 				</div>
 			</div>
 			
@@ -80,21 +80,21 @@ $numcompte= $_SESSION['num'];
 			<div class="col-md-6 col-lg-4">
 				<div class="form-group">
 					<label>Prénom :</label>
-					<input type="text" class="form-control" name="prenom" id="prenomI" placeholder="Ex: Thomas">
+					<input type="text" class="form-control" name="prenom" id="prenomI" placeholder="Ex: Thomas" required>
 				</div>
 				<div class="form-group">
 					<label>Téléphone :</label>
-					<input type="text" class="form-control" name="tel" id="telI" placeholder="Ex: 05 00 00 00 00">
+					<input type="text" class="form-control" name="tel" id="telI" maxlength="10" placeholder="Ex: 0500000000" required>
 				</div>
 				<div class="form-group">
 					<label>Adresse Mail :</label>
-					<input type="text" class="form-control" name="mail" id="mailI" placeholder="jean@gmail.com">
+					<input type="text" class="form-control" name="mail" id="mailI" placeholder="jean@gmail.com" required>
 				</div>
 				<h3> Formation : </h3>
 					<label>Cycle :</label>
 						<div class="radio">
-	  						<label><input type="radio" name="cycle" value="premier">1ére Année</label>
-	  						<label><input type="radio" name="cycle" value="second">2nd Année</label>
+	  						<label><input type="radio" name="cycle" value="premier" required>1ére Année</label>
+	  						<label><input type="radio" name="cycle" value="second" required>2nd Année</label>
 						</div>
 				</div>
 

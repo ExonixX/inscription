@@ -46,9 +46,11 @@
 	if(isset($_POST['supprimer']))
 	{
 		$id=$_POST['FRMTID'];
-		if(!is_null($frm1->deleteFormation($id)))
+		echo "test delete 0";
+		if($frm1->deleteFormation($id))
 		{
-			header('Location: index.php');
+			echo "test delete";
+			//header('Location: index.php');
 		}
 		else
 		{

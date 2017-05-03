@@ -9,34 +9,23 @@ class FormationDAO extends DAO{
 	private $_FRMTID ="FRMTID as _FRMTid";
 	private $_FRMTNOM ="FRMTNOM as _FRMTnom";
 
-
-
-	function getFormationByID($id){
-		
+	function getFormationByID($id)
+	{	
 		$req = "SELECT * from FORMATION where FRMTID = :id ";
 		$req->bindParam(':id', $id, PDO::PARAM_STR);
         $req->execute();
         return $this->cursorToObject($req);
-		
-	
 	}
 
-	function getFormation(){
-		
+	function getFormation()
+	{	
 		$req ="SELECT * from FORMATION";
         $req->execute();
         return $this->cursorToObject($req);
-		
-	
 	}
 
-
-
-
-
-
-
-	function insertFormation($nom){
+	function insertFormation($nom)
+	{
 		$boo=false;
 		$req=$this->prepare("INSERT INTO formation (FRMTNOM) VALUES (:nom)");
 		$req->bindparam(':nom', $nom ,PDO::PARAM_STR);
@@ -46,7 +35,6 @@ class FormationDAO extends DAO{
         }
         return $boo;
 	}
-
 
 	function deleteFormation($id){
 		$boo=false;
@@ -58,7 +46,6 @@ class FormationDAO extends DAO{
 		}
 		return $boo;
 	}
-
 
 	//fonction qui supprime le dossier et fichiers à l'intérieur
 	function rmRecursive($path) {

@@ -73,13 +73,12 @@ class EtudiantDAO extends DAO{
 		$req->bindparam(':villeadressetu',$villeadressetu,PDO::PARAM_STR);
 		$req->bindparam(':cmptnum',$cmptnum,PDO::PARAM_INT);
 		$req->bindparam(':frmtid',$frmtid,PDO::PARAM_INT);
-		if($req->execute()){
-                    $boo=true;
-                }
-                return $boo;
 
-
-}
-
+		if($req->execute())
+		{
+        	$boo=true;
+        }
+        return $boo;
+    }
 }
 

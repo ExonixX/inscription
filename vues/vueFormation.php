@@ -1,5 +1,6 @@
 <?php
 
+require_once 'dao.inc.php';
 
 ?>
 
@@ -17,25 +18,27 @@
 	<form action="#" method="POST" id="form">
 			<div class="col-md-6 col-lg-4 col-lg-offset-2">
 				<div class="form-group">
-				<label>Liste des Formations :</label>
-				<select name="FRMTID">
-						<?php
-						// A REFAIRE AU PROPRE
-						mysql_connect("127.0.0.1", "root", "");
-						mysql_select_db("inscription_ligne");
-						mysql_query("SET NAMES 'utf8'");
- 
-						$reponse = mysql_query("SELECT * FROM FORMATION");
-						while ($donnees =  mysql_fetch_array($reponse))
-					{
-					?>
+					<label>Liste des Formations :</label>
 
-					<option value="<?php echo $donnees['FRMTID'] ?>"><?php echo $donnees['FRMTNOM'] ?></option>
-   					<?php
-  					 }
-  					 ?>
-				</select>
-				<button type="submit" class="btn btn-success pull-right-md" name="supprimer" id="supprimerI">Supprimer</button><br>
+					<select name="FRMTID">
+							<?php
+							// A REFAIRE AU PROPRE
+							mysql_connect("127.0.0.1", "root", "");
+							mysql_select_db("inscription_ligne");
+							mysql_query("SET NAMES 'utf8'");
+	 
+							$reponse = mysql_query("SELECT * FROM FORMATION");
+							while ($donnees =  mysql_fetch_array($reponse))
+						{
+						?>
+
+						<option value="<?php echo $donnees['FRMTID'] ?>"><?php echo $donnees['FRMTNOM'] ?></option>
+	   					<?php
+	  					 }
+	  					 ?>
+					</select>
+					
+					<button type="submit" class="btn btn-success pull-right-md" name="supprimer" id="supprimerI">Supprimer</button><br>
 				</div>
 				<div class="form-group">
 					<label>Ajouter Une Formation :</label>

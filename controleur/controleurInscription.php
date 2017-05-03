@@ -1,6 +1,7 @@
 <?php
 
 	require_once('modele/BD.Etudiant.inc.php');
+	require_once ('modele/Formation.inc.php');
 
 	$etu= new EtudiantDAO();
 
@@ -33,38 +34,38 @@
 			//creation dossier etudiant en fonction de sa formation
 			//----------------------------------------------------------------------------------------------------
 			//----------------------------------------------------------------------------------------------------
-			//à voir si on peut pas faire mieux
-
-			mysql_connect("127.0.0.1", "root", "");
-			mysql_select_db("inscription_ligne");
-			mysql_query("SET NAMES 'utf8'");
-			$reponse = mysql_query("SELECT FRMTNOM FROM FORMATION WHERE FRMTID = ".$formation."");
-			while ($donnees =  mysql_fetch_array($reponse))
-			{
+			$formation = $etu->GetFormationEtudiantByCode($frmtid);
+			var_dump($formation);
+			echo $formation->get_FRMTnom();
+			//for ($i=0;$i<sizeof($etu);$i++){
+			//	print $etu[$i][0];
+			//}
+			//while ($donnees =  mysql_fetch_array($reponse))
+			//{
 				//emplacement du répertoire souhaité
 				//pour garder les accents lors de la création du dossier
 				//utf8 pour garder la casse
-				$dossier = "upload/".$donnees['FRMTNOM']."/".$nom."_".$prenom;
+				//$dossier = "upload/".$formation."/".$nom."_".$prenom;
 
 				//revoir la condition
 				//si dossier existe, alors on affiche un message
 
-				if(!is_dir($dossier))
-				{
-					mkdir($dossier);
-				}
-				else
-				{
-					echo 'Ce dossier existe déjà';
-				}	
-			}
+				//if(!is_dir($dossier))
+				//{
+				//	mkdir($dossier);
+				//}
+				//else
+				//{
+				//	echo 'Ce dossier existe déjà';
+				//}	
+			//}
 
 		//--------------------------------------------------------------------------------------------------------
 		//--------------------------------------------------------------------------------------------------------
 		//--------------------------------------------------------------------------------------------------------
 		//--------------------------------------------------------------------------------------------------------
 			
-			header('Location: index.php?m=Responsable');
+			//header('Location: index.php?m=Responsable');
 		}
 		else
 		{

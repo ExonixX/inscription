@@ -1,13 +1,13 @@
 <?php
 
 	require_once('modele/BD.Etudiant.inc.php');
+	require_once('modele/BD.Formation.inc.php');
 	require_once ('modele/Formation.inc.php');
 
 	$etu= new EtudiantDAO();
 
 	if(isset($_POST['suivant']))
 	{
-
 		$nom=$_POST['nom'];
 		$prenom=$_POST['prenom'];
 		$ine=$_POST['ine'];
@@ -26,25 +26,31 @@
 		$cmptnum=$_POST['cmptnum'];
 		$frmtid=$_POST['FRMTID'];
 
+		//si c'est TRUE, on insère dans la BDD
 		if(!is_null($etu->insertEtudiant($nom,$prenom,$ine,$sexe,$datenaiss,$lieunaiss,$cpnaiss,$paysnaiss,$tel,$mail,$boursier,$cycle,$adressetu,$cpadressetu,$villeadressetu,$cmptnum,$frmtid)))
 		{
 
 			//----------------------------------------------------------------------------------------------------
+			//----------------creation dossier etudiant en fonction de sa formation-------------------------------
 			//----------------------------------------------------------------------------------------------------
-			//creation dossier etudiant en fonction de sa formation
-			//----------------------------------------------------------------------------------------------------
-			//----------------------------------------------------------------------------------------------------
-			$formation = $etu->GetFormationEtudiantByCode($frmtid);
-			var_dump($formation);
-			echo $formation->get_FRMTnom();
-			//for ($i=0;$i<sizeof($etu);$i++){
-			//	print $etu[$i][0];
-			//}
-			//while ($donnees =  mysql_fetch_array($reponse))
-			//{
+			echo $frmtid;
+			//creation objets
+			$formDAO= new FormationDAO();
+			//$form= new Formation();
+
+			//on récupère le nom de la formation où l'étudiant s'est inscrit
+			//via la méthode sous forme d'objet
+			$form=$formDAO->getFormationByID($frmtid);
+
+			var_dump($form);
+			//on récupère la valeur
+			$nom_form=$form->get_FRMTnom();
+
+			echo "valeur nom_form :";
+			var_dump($nom_form);
 				//emplacement du répertoire souhaité
 				//pour garder les accents lors de la création du dossier
-				//utf8 pour garder la casse
+				//ut
 				//$dossier = "upload/".$formation."/".$nom."_".$prenom;
 
 				//revoir la condition
@@ -58,7 +64,6 @@
 				//{
 				//	echo 'Ce dossier existe déjà';
 				//}	
-			//}
 
 		//--------------------------------------------------------------------------------------------------------
 		//--------------------------------------------------------------------------------------------------------
@@ -73,5 +78,5 @@
 		}
 
 	}
-	require_once 'vues/vueInscription.php';
+	//require_once 'vues/vueInscription.php';
 ?>

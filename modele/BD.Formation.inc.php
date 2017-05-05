@@ -1,7 +1,7 @@
 <?php
 
-require_once 'Formation.inc.php';
-require_once 'dao.inc.php';
+require_once('Formation.inc.php');
+require_once ('modele/dao.inc.php');
 
 
 class FormationDAO extends DAO{
@@ -11,8 +11,8 @@ class FormationDAO extends DAO{
 
 	function getFormationByID($id)
 	{	
-		$req = "SELECT * from FORMATION where FRMTID = :id ";
-		$req->bindParam(':id', $id, PDO::PARAM_STR);
+		$req = $this->prepare("SELECT FRMTNOM from FORMATION where FRMTID = :id ");
+		$req->bindParam(':id', $id, PDO::PARAM_INT);
         $req->execute();
         return $this->cursorToObject($req);
 	}
@@ -21,7 +21,7 @@ class FormationDAO extends DAO{
 	{	
 		$req ="SELECT * from FORMATION";
         $req->execute();
-        return $this->cursorToObject($req);
+        return $this->cursorToObjectArray($req);
 	}
 
 	function insertFormation($nom)
@@ -47,22 +47,6 @@ class FormationDAO extends DAO{
 		return $boo;
 	}
 
-	//fonction qui supprime le dossier et fichiers à l'intérieur
-	function rmRecursive($path) {
-	    $path = real_path($path);
-	    if(!file_exists($path))
-	        throw new RuntimeException('Fichier ou dossier non-trouvé');
-	    if(is_dir($path)) {
-	        $dir = dir($path);
-	        while(($file_in_dir = $dir->read()) !== false) {
-	            if($file_in_dir == '.' or $file_in_dir == '..')
-	                continue; // passage au tour de boucle suivant
-	            rmRecursive("$path/$file_in_dir");
-	        }
-	        $dir->close();
-	    }
-	    unlink($path);
-	}
 
 }
 

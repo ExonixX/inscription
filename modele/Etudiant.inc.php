@@ -22,7 +22,7 @@ private $_EDNTVILLEADRESSETU;
 private $_CMPTNUM;
 private $_FRMTID;
 
-	function __construct() {
+	function __construct(){
     
 
 }

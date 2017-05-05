@@ -103,20 +103,20 @@ $numcompte= $_SESSION['num'];
 				</input>
 				</div>
 				<select name="FRMTID">
-						<?php
+					<?php
 						mysql_connect("127.0.0.1", "root", "");
 						mysql_select_db("inscription_ligne");
 						mysql_query("SET NAMES 'utf8'");
- 
-						$reponse = mysql_query("SELECT * FROM FORMATION");
+	 
+	 					$reponse = mysql_query("SELECT * FROM FORMATION");
 						while ($donnees =  mysql_fetch_array($reponse))
-					{
+						{
 					?>
 
-					<option value="<?php echo $donnees['FRMTID'] ?>"><?php echo $donnees['FRMTNOM'] ?></option>
+							<option value="<?php echo $donnees['FRMTID'] ?>"><?php echo $donnees['FRMTNOM'] ?></option>
    					<?php
-  					 }
-  					 ?>
+  					 	}
+  					?>
 				</select>
 					</div>
 				</div>

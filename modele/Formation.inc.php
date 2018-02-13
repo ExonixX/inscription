@@ -10,19 +10,19 @@
 		}
 
 		public function get_FRMTid(){
-			return $this->_FRMTID;
+			return $this->FRMTID;
 		}
 
-		public function set_FRMTid($_FRMTID){
-			$this->_FRMTID = $_FRMTID;
+		public function set_FRMTid($_pFRMTID){
+			$this->FRMTID = $_pFRMTID;
 		}
 
 		public function get_FRMTnom(){
-			return $this->_FRMTNOM;
+			return $this->FRMTNOM;
 		}
 
-		public function set_FRMTnom($_FRMTNOM){
-			$this->_FRMTNOM = $_FRMTNOM;
+		public function set_FRMTnom($_pFRMTNOM){
+			$this->FRMTNOM = $_pFRMTNOM;
 		}
 
 	}

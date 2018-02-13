@@ -1,158 +1,195 @@
 <?php
 
 echo 'Vous etes le compte n°'.$_SESSION['num'];
-
-
 $numcompte= $_SESSION['num'];
 
 ?>
 
-<header>
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-
-</header>
-
-<html>
-<body>
-
 <div class="container">
-	<form action="#" method="POST" id="form">
-		<h3> Informations concernant le responsable</h3>
+	<form action="#" method="POST" id="formResp1">
+		<h3> Informations concernant le responsable 1 :</h3>
 			<div class="row">
+				<!--BLOC A GAUCHE-->
 				<div class="col-md-6 col-lg-4 col-lg-offset-2">
 					<div class="form-group">
-						<label>Nom :</label>
-						<input type="text" class="form-control" name="nom" id="nomI" placeholder="Ex: Dupond">
+						<p>
+							<label for="nomResp1">Nom :</label>
+							<input type="text" class="form-control" name="nomResp1" id="nomResp1" placeholder="Ex : Dupond" />
+						</p>
 					</div>
-					<label>Lien de parenté :</label>
-						<input type="text" class="form-control" name="lien" id="lienI" placeholder="Ex: Mère/Père">
+					
 					<div class="form-group">
-						<label>Téléphone :</label>
-						<input type="text" class="form-control" name="tel" id="telI" placeholder="Ex: 06 00 00 00 00">
+						<label>Lien de parenté :</label>
+						<select name="lienResp1" >
+							<option value="Mere">Mère</option>
+							<option value="Pere">Père</option>
+							<option value="Autre">Autre</option>
+						</select>
 					</div>
+						
 					<div class="form-group">
-						<label>Adresse Mail :</label>
-						<input type="text" class="form-control" name="mail" id="mailI" placeholder="jean@gmail.com">
+						<p>
+							<label for="telResp1">Téléphone :</label>
+							<input type="text" class="form-control" name="telResp1" id="telResp1" maxlength="10" placeholder="Ex : 0600000000" />
+						</p>
 					</div>
+
 					<div class="form-group">
-						<label>Téléphone Fixe :</label>
-						<input type="text" class="form-control" name="fixe" id="prenomI" placeholder="Ex: 05 00 00 00 00">
+						<p>
+							<label for="mailResp1">Email :</label>
+							<input type="text" class="form-control" name="mailResp1" id="mailResp1" placeholder="jean@gmail.com"/>
+						</p>
 					</div>
+
+					<div class="form-group">
+						<p>
+							<label for="fixResp1">Téléphone fix :</label>
+							<input type="text" class="form-control" name="fixResp1" id="fixResp1" maxlength="10" placeholder="Ex : 0500000000" />
+						</p>
+					</div>
+				<!--FIN BLOC A GAUCHE-->
 				</div>
+				<!--BLOC A DROITE-->
 				<div class="col-md-6 col-lg-4">
 					<div class="form-group">
-						<label>Prénom :</label>
-						<input type="text" class="form-control" name="prenom" id="prenomI" placeholder="Thomas">
+						<p>
+							<label for="prenomResp1">Prénom :</label>
+							<input type="text" class="form-control" name="prenomResp1" id="prenomResp1" placeholder="Thomas"/>
+						</p>
 					</div>
-					<div class="form-group">
-					<label>Parent Légal :</label>
-						<div class="radio">
-	  						<label><input type="radio" name="legal" value="Oui">Oui</label>
-	  						<label><input type="radio" name="legal" value="Non">Non</label>
+
+					<label for="legalResp1">Parent Légal :</label>
+						<div class="form-group">
+							<div class="radio">
+		  						<p>
+		  							<label><input type="radio" name="legalResp1" value="1" />Oui</label>
+		  							<label><input type="radio" name="legalResp1" value="0" />Non</label>
+		  						</p>
+							</div>
 						</div>
-				</div>
+
 					<div class="form-group">
 						<label>Nombre D'enfants Scolarisés :</label>
-				<select name="enfantsco">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="+3">3 Ou Plus</option>
-				</select>
-				</div>		
+							<select name="enfantsco">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="+3">3 Ou Plus</option>
+							</select>
+					</div>
+
 					<div class="form-group">
 						<label>Nombre D'enfants Totaux :</label>
-				<select name="nbenfant">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="+3">3 Ou Plus</option>
-				</select>
-				</div>
-				</div>
-				</div>
-		<h3>Veuillez saisir votre adresse :</h3>
-			<div class="row">
-				<div class="col-md-6 col-lg-4 col-lg-offset-2">
-					<div class="form-group">
-						<label>Adresse :</label>
-						<input type="text" class="form-control" name="adresseresp" id="adresserespI" placeholder="Ex: 18 Route de Jean Moulin">
+						<select name="nbenfant">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="+3">3 Ou Plus</option>
+						</select>
 					</div>
-					<div class="form-group">
-						<label>Code postal :</label>
-						<input type="text" class="form-control" name="CPresp" id="CPrespI" placeholder="Ex: 33000">
-					</div>
-					<div class="form-group">
-						<label>Ville :</label>
-						<input type="text" class="form-control" name="villeresp" id="villerespI" placeholder="Ex: Bordeaux">
-					</div>
-					<div class="form-group">
-						<label>Pays :</label>
-						<input type="text" class="form-control" name="paysresp" id="paysrespI" placeholder="France">
-					</div>
-		
-					
+				<!--FIN BLOC A DROITE-->
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-md-6 col-lg-4 col-lg-offset-2">
+					
+					<div class="form-group">
+						<p>
+							<label for="adresseresp1">Adresse :</label>
+							<input type="text" class="form-control" name="adresseresp1" id="adresseresp1" placeholder="Ex : 18 Route de Jean Moulin" />
+						</p>
+					</div>
+
+					<div class="form-group">
+						<p>
+							<label for="CPresp1">Code postal :</label>
+							<input type="text" class="form-control" name="CPresp1" id="CPresp1" maxlength="5" placeholder="Ex : 33000" />
+						</p>
+					</div>
+
+					<div class="form-group">
+						<label for="villeresp1">Ville :</label>
+						<input type="text" class="form-control" name="villeresp1" id="villeresp1" placeholder="Ex : Bordeaux" />
+					</div>
+
+					<div class="form-group">
+						<label>Pays :</label>
+						<select name="PSNSID">
+							<?php
+							
+							for($i=0;$i<count($listePays);$i++)
+							{ 
+							?>
+								<option value=<?php echo $listePays[$i]->get_PSNSID(); ?> >
+									<?php echo $listePays[$i]->get_PSNSNOM(); ?> 
+								</option>						
+							<?php
+							}
+							?>	
+						</select>						
+					</div>
+				</div>
+			</div>
+		
 		<h3>Situation emploi :</h3>
+				
 			<div class="row">
 				<div class="col-md-6 col-lg-4 col-lg-offset-2">
 					<div class="form-group">
 						<label>Situation :</label>
-				<select name="STEPID">
-						<?php
-						mysql_connect("127.0.0.1", "root", "");
-						mysql_select_db("inscription_ligne");
-						mysql_query("SET NAMES 'utf8'");
- 
-						$reponse = mysql_query("SELECT * FROM situation_emploi");
-						while ($donnees =  mysql_fetch_array($reponse))
-					{
-					?>
-					<option value="<?php echo $donnees['STEPID'] ?>"><?php echo $donnees['STEPLIBELLE'] ?></option>
-   					<?php
-  					 }
-  					 ?>
-
-				
-				</select>
+						<!-- Liste déroulante SituationEmploi : controleurResponsable -->
+						<select name="STEPID">
+							<?php
+								
+							for($i=0;$i<count($listeSituationEmploi);$i++)
+							{ 
+							?>
+								<option value=<?php echo $listeSituationEmploi[$i]->get_STEPID(); ?> >
+									<?php echo $listeSituationEmploi[$i]->get_STEPLIBELLE(); ?> 
+								</option>
+							<?php
+							}
+							?>
+						</select>
 					</div>
 				</div>
 			</div>			
-		<h3>Profession actuelle :</h3>
+				
+		<h3>Profession actuelle ou ancienne :</h3>
+		
 			<div class="row">
 				<div class="col-md-6 col-lg-4 col-lg-offset-2">
 					<div class="form-group">
 						<label>Profession :</label>
-				<select name="PFSNID">
-						<?php
-						mysql_connect("127.0.0.1", "root", "");
-						mysql_select_db("inscription_ligne");
-						mysql_query("SET NAMES 'utf8'");
- 
-						$reponse = mysql_query("SELECT * FROM PROFESSION");
-						while ($donnees =  mysql_fetch_array($reponse))
-					{
-					?>
-					<option value="<?php echo $donnees['PFSNID'] ?>"><?php echo $donnees['PFSNLIBELLE'] ?></option>
-   					<?php
-  					 }
-  					 ?>
-
-				
-				</select>
+							<!-- Liste déroulante Profession : controleurResponsable -->
+							<select name="PFSNID" >
+								<?php
+									
+								for($i=0;$i<count($listeProfession);$i++)
+								{ 
+								?>
+									<option value=<?php echo $listeProfession[$i]->get_PFSNID(); ?> >
+										<?php echo $listeProfession[$i]-> get_PFSNLIBELLE(); ?> 
+									</option>
+								<?php
+								}
+								?>
+							</select>
 					</div>
-				</div>
-			</div>			
-			
+					
+					<label for="responsable2">Souhaitez-vous rajouter un 2ème responsable ?</label>
+					<div class="form-group">
+						<div class="radio">
+							<p>
+								<label for="oui"><input type="radio" name="responsable2" id="oui" value="Oui" />Oui</label>
+								<label for="non"><input type="radio" name="responsable2" id="non" value="Non" />Non</label>
+							</p>
+						</div>
+					</div>
 
+					<div class="form-group">
+						<button type="submit" class="btn btn-success pull-right" name="suivant" id="suivant">Suivant</button>
+					</div>
 
-			<div class="form-group">
-				<button type="submit" class="btn btn-success pull-right" name="suivant" id="suivantI">Suivant -></button>
-			</div>	
-
-
+				</div>	
+			</div>		
 	</form>
 </div>
-</body>
-</html>

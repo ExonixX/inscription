@@ -1,49 +1,70 @@
 <?php
 
-//pour pouvoir utiliser la classe NaturePieceDAO()
-require_once('modele/BD.NaturePiece.inc.php');
+	//pour pouvoir utiliser la classe NaturePieceDAO()
+	require_once('modele/BD.NaturePiece.inc.php');
+	require_once('modele/BD.Formation.inc.php');
 
-//--------------------------------------------------------------------------------------
-// Ajout Nature Pièce-------------------------------------------------------------------
-//--------------------------------------------------------------------------------------
+	$np = new NaturePieceDAO();
+	$frm = new FormationDAO();
 
-$np= new NaturePieceDAO();
+	//--------------------------------------------------------------------------------------
+	// Ajout Nature Pièce-------------------------------------------------------------------
+	//--------------------------------------------------------------------------------------
 
-if(isset($_POST['ajouter']))
-{
-	$intitule=$_POST['intitule'];
-
-	if($np->insertNaturePiece($intitule))
+	if(isset($_POST['ajouter']))
 	{
-		header('Location: index.php?m=NaturePiece');
+		$intitule=$_POST['intitule'];
+
+		if($np->insertNaturePiece($intitule))
+		{
+			$listeidformation = $frm->getFormation();
+
+			//pour recuperer l'id de la derniere nature piece ajoutée
+			$numlastinsertnp=$np->lastInsertId();
+			//conversion en Int
+			$numlastinsertnp=intval($numlastinsertnp);
+
+			for($i=0;$i<count($listeidformation);$i++)
+			{
+				$np->insertNaturePieceFormation($numlastinsertnp, $listeidformation[$i]->get_FRMTid());
+			}
+
+			header('Location: index.php?m=NaturePiece');
+		}
+		else
+		{
+		    echo 'Erreur insertion';   
+		}
 	}
-	else
+
+	//--------------------------------------------------------------------------------------
+	// Suppression Nature Pièce-------------------------------------------------------------
+	//--------------------------------------------------------------------------------------
+
+	if(isset($_POST['supprimer']))
 	{
-	    echo 'Erreur';   
+		$id=$_POST['NTPCID'];
+
+		if($np->deleteNaturePieceFormation($id))
+		{
+			$np->deleteNaturePiece($id);
+
+			header('Location: index.php?m=NaturePiece');
+		}
+		else
+		{
+			echo'Erreur';
+		}
 	}
-}
 
-//--------------------------------------------------------------------------------------
-// Suppression Nature Pièce-------------------------------------------------------------
-//--------------------------------------------------------------------------------------
-$np1=new NaturePieceDAO();
+	//-------------------------------------------------------------------------------------
+	// Liste Nature Piece présent dans la bdd
+	//-------------------------------------------------------------------------------------
+	$listNP = new NaturePieceDAO();
+	$listenaturepiece=$listNP->getNaturePiece();
 
-if(isset($_POST['supprimer']))
-{
-	$id=$_POST['NTPCID'];
-	if(!is_null($np1->deleteNaturePiece($id)))
-	{
-		header('Location: index.php?m=NaturePiece');
-	}
-	else
-	{
-		echo'Erreur';
-
-	}
-}
-
-//affichage dans la vue
-require_once('vues/vueNaturePiece.php');
+	//affichage dans la vue
+	require_once('vues/vueNaturePiece.php');
 
 
 

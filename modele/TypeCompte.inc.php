@@ -9,12 +9,14 @@ class TypeCompte{
     }
 
 
-    public function get_TCMPNUM(){
-        return $this->_TCMPNUM;
+    public function get_TCMPNUM()
+    {
+        return $this->TCMPNUM;
     }
 
-    public function get_TCMPLIBELLE(){
-        return $this->_TCMPLIBELLE;
+    public function get_TCMPLIBELLE()
+    {
+        return $this->TCMPLIBELLE;
     }
 
     

@@ -10,8 +10,6 @@ $user="root";
 $pass="";
 $base="inscription_ligne";
 
-
-
 function BDD(){
 	$dsnBDD = 'mysql:dbname=inscription_ligne;host=localhost';
 	$userBDD = 'root';

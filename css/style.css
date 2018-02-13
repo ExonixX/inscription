@@ -122,3 +122,10 @@ text-align: center;
       #map {
         height: 50%;
       }
+
+.has-error label.error {
+    color: #a94442;
+}
+.has-error .help-block { 
+    color: #737373;
+}

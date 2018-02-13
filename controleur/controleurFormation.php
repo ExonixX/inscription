@@ -1,33 +1,22 @@
 <?php
 	require_once('modele/BD.Formation.inc.php');
-
+	
+	$frm= new FormationDAO();
 //----------------------------------------------------------------------------------------------------------------
 //---------------------------------Pour ajouter une formation dans la bdd ----------------------------------------
 //---------------------------------Création de dossier par formation----------------------------------------------
 //----------------------------------------------------------------------------------------------------------------
-	$frm= new FormationDAO();
-
-	if(isset($_POST['suivant']))
+	if(isset($_POST['ajouter']))
 	{
-		//pour garder les accents lors de la création du dossier
+		//recuperation du nom de la nouvelle formation
 		$nom=$_POST['formation'];
 		if(!is_null($frm->insertFormation($nom)))
 		{
 			// creation dossier en même temps que la nouvelle formation
 			//emplacement du répertoire souhaité
-			//utf8 pour garder la casse
+			//utf8 pour garder les accents lors de la création du dossier
 			$dossier = "upload/".utf8_decode($nom);
-			//revoir la condition
-			//si dossier existe, alors on affiche un message
-			if(!is_dir($dossier))
-			{
-				mkdir($dossier);
-				header('Location: index.php');
-			}
-			else
-			{
-				echo 'erreur';
-			}
+			header('Location: index.php');
 	   
 		}
 		else
@@ -35,27 +24,29 @@
 	    	echo 'Erreur';
 		}
 	}
-
 //----------------------------------------------------------------------------------------------------------------
 //---------------------------------Pour supprimer une formation---------------------------------------------------
-//
 //----------------------------------------------------------------------------------------------------------------
-
-	$frm1=new FormationDAO();
-
-	if(isset($_POST['supprimer']))
+	elseif(isset($_POST['supprimer']))
 	{
 		$id=$_POST['FRMTID'];
-		echo "test delete 0";
-		if($frm1->deleteFormation($id))
+		//on supprime la formation de la base
+		if($frm->deleteFormation($id))
 		{
-			echo "test delete";
-			//header('Location: index.php');
+			header('Location: index.php?m=Formation');
 		}
 		else
 		{
 			echo'Erreur';
 		}
 	}
-	require_once 'vues/vueFormation.php';
+	else
+	{
+		//---------------------liste des formations--------------
+		$liste_frmtDAO = new FormationDAO;
+		$listeForm = $liste_frmtDAO-> getFormation();
+
+		require_once 'vues/vueFormation.php';
+	
+	}
 ?>
